@@ -7,7 +7,6 @@ const getWords = asyncHandler(async (req, res) => {
   });
 
 const setWords = asyncHandler(async (req, res) => {
-  console.log(req.body);
   const word = await Word.create({
     word: req.body.word,
     sentence: req.body.sentence,
