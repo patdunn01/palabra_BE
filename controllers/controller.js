@@ -6,7 +6,21 @@ const getWords = asyncHandler(async (req, res) => {
   res.status(200).json(events);
   });
 
+const setWords = asyncHandler(async (req, res) => {
+  console.log(req.body);
+  const word = await Word.create({
+    word: req.body.word,
+    sentence: req.body.sentence,
+    english: req.body.english,
+    englishmeaning: req.body.englishmeaning,
+    answers: req.body.answers,
+    
+  })
+  res.status(200).json(word);
+})
+
 
 module.exports = { 
   getWords,
+  setWords,
 };

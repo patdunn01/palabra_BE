@@ -12,7 +12,7 @@ async function run() {
     const db = client.db(dbName);
 
     // Use the collection "people"
-    const col = db.collection("people");
+    const col = db.collection("spanish words");
 
     // Construct a document
     const seedWords = {

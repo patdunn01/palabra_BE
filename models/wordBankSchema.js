@@ -13,11 +13,14 @@ const wordBankSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  englishMeaning: {
+  englishmeaning: {
     type: String,
     required: true,
   },
-  answers: { type: [String], required: true },
+  answers: { 
+    type: Array, 
+    required: true 
+  },
 });
 
 module.exports = mongoose.model("Word", wordBankSchema);
