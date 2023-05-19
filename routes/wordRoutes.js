@@ -3,8 +3,9 @@ const router = express.Router();
 
 const {
     getWords
-  } = require("./controllers/controller");
+  } = require("../controllers/controller");
 
-router.route("/").get(getWords);
+
+router.route("/").get(getWords)
 
 module.exports = router;

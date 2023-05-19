@@ -1,9 +1,12 @@
+const asyncHandler = require('express-async-handler');
 const Word = require("../models/wordBankSchema");
 
-const getWords = async (req, res) => {
-    const events = await Word.find({});
-    res.status(200).json(events);
-  };
+const getWords = asyncHandler(async (req, res) => {
+  const events = await Word.find({});
+  res.status(200).json(events);
+  });
 
 
-module.exports = getWords;
+module.exports = { 
+  getWords,
+};

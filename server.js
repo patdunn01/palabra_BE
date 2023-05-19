@@ -8,4 +8,6 @@ connectDB();
 
 const app = express();
 
+app.use('/api/palabras', require('./routes/wordRoutes'))
+
 app.listen(port, () => console.log(`server started on port ${port}`));
