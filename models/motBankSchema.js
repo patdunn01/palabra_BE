@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
-const wordBankSchema = mongoose.Schema({
+
+const motBankSchema = mongoose.Schema({
   word: {
     type: String,
     required: true,
@@ -23,6 +24,6 @@ const wordBankSchema = mongoose.Schema({
   },
 });
 
-const Word = mongoose.model("Word", wordBankSchema);
+const Mot = mongoose.model("Mot", motBankSchema);
 
-module.exports = Word;
+module.exports =  Mot;

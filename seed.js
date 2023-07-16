@@ -87,7 +87,7 @@ async function run() {
       ],
     };
 
-    // Insert a single document, wait for promise so we can read it back
+    // Insert a single document, wait for promise so it can be read back
     const p = await col.insertOne(seedWords);
     // Find one document
     const myDoc = await col.findOne();
