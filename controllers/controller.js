@@ -37,11 +37,30 @@ const setMots = asyncHandler(async (req, res) => {
   res.status(200).json(mot);
 })
 
+const getParole = asyncHandler(async (req, res) => {
+  const mots = await Mot.find();
+  res.status(200).json(mots);
+  });
+
+const setParole = asyncHandler(async (req, res) => {
+  const mot = await Mot.create({
+    word: req.body.word,
+    sentence: req.body.sentence,
+    english: req.body.english,
+    englishmeaning: req.body.englishmeaning,
+    answers: req.body.answers,
+    
+  })
+  res.status(200).json(mot);
+})
+
 
 
 module.exports = { 
   getWords,
   getMots,
+  getParole,
   setWords,
-  setMots
+  setMots,
+  setParole
 };
