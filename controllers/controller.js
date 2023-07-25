@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const Word = require("../models/wordBankSchema");
 const Mot = require("../models/motBankSchema");
+const Parola = require("../models/parolaBankSchema");
 
 
 const getWords = asyncHandler(async (req, res) => {
@@ -38,12 +39,12 @@ const setMots = asyncHandler(async (req, res) => {
 })
 
 const getParole = asyncHandler(async (req, res) => {
-  const mots = await Mot.find();
-  res.status(200).json(mots);
+  const parole = await Parola.find();
+  res.status(200).json(parole);
   });
 
 const setParole = asyncHandler(async (req, res) => {
-  const mot = await Mot.create({
+  const parola = await Parola.create({
     word: req.body.word,
     sentence: req.body.sentence,
     english: req.body.english,
@@ -51,7 +52,7 @@ const setParole = asyncHandler(async (req, res) => {
     answers: req.body.answers,
     
   })
-  res.status(200).json(mot);
+  res.status(200).json(parola);
 })
 
 
